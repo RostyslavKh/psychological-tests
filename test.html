@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/modalResult.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/test.css" />
+  </head>
+  <body>
+    <!--<button onclick="inputPressmark()"> Подсчет результатов теста</button>-->
+    <h1>Практика со всплывающим окном</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora labore voluptates eaque recusandae officia sunt
+      nesciunt magnam, facilis animi nisi. Magni sint obcaecati unde autem consectetur. Minus ullam laudantium, dolorum
+      repudiandae atque nisi itaque deleniti dolores? Ullam voluptate minus doloribus necessitatibus quaerat possimus
+      dolorem rem reiciendis recusandae cupiditate fugit aperiam earum similique fuga blanditiis repellendus error vel a
+      neque, ea quidem repudiandae iure temporibus. Laborum perferendis tenetur sit excepturi alias nobis sunt
+      cupiditate sed ullam autem vitae, corrupti iste iusto officiis dicta. Doloremque inventore voluptatibus aliquam
+      quasi, saepe possimus quod illum reprehenderit aspernatur, iusto corrupti quidem porro culpa, est eveniet!
+    </p>
+
+    <div class="modal-result">
+      <div class="modal-result-overly" data-close="true">
+        <div class="modal-result-window">
+          <div class="modal-result-header">
+            <span style="margin: auto" class="modal-result-title">Результаты тестирования</span>
+            <span class="modal-result-close" data-close="true">&times;</span>
+          </div>
+          <div class="modal-result-body" style="border: 3px solid rgb(255, 0, 76); padding: 20px 100px">
+            <p id="inner-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, enim?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, enim?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, enim?</p>
+          </div>
+          <div class="modal-footer1" style="text-align: center">
+            <button
+              style="
+                display: inline-block;
+                background-color: aqua;
+                border: 3px solid rgb(4, 0, 255);
+                height: 40px;
+                position: relative;
+                padding: 0 1rem;
+              "
+              onclick="modal.open()"
+              data-close="true"
+            >
+              Записаться на прием
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
+    <button onclick="modal.open()">Ok</button>
+    <button onclick="inputPressmark()">Ввод шифрования</button>
+    <br />
+    <br />
+    <button onclick="modalResult.open()">Открыть модальное окно</button>
+
+    <form style="padding: 50px; border: 10px inset red; width: 600px; margin: 50px; text-align: center">
+      <p>
+        <input type="text" placeholder=" Ваше имя (обязательно)" style="width: 400px; text-align: center" required />
+      </p>
+      <p>
+        <input
+          type="tel"
+          id="client-phone1"
+          name="phoneNumber"
+          list="tel-list"
+          placeholder="Номер телефона (обязательно)"
+          style="width: 400px; display: inline-block; text-align: center"
+          required
+        />
+      </p>
+      <p>
+        <input type="tel" id="" name="phoneNumber2" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+      </p>
+      <button type="submit">Ok</button>
+    </form>
+
+    <form>
+      <p><b>Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</b></p>
+      <p>
+        <input type="radio" name="answer" value="a1" />Офицерский состав<br />
+        <input type="radio" name="answer" value="a2" />Операционная система<br />
+        <input type="radio" name="answer" value="a3" />Большой полосатый мух
+      </p>
+      <p><input type="submit" /></p>
+    </form>
+
+    <script src="js/lib/jquery-1.8.3.min.js"></script>
+    <script src="js/lib/jquery.maskedinput.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#client-phone1').mask('+38 (099) 999-99-99')
+      })
+      $(document).ready(function () {
+        $('#client-phone2').mask('+38 (099) 999-99-99')
+      })
+    </script>
+    <script src="js/base.js"></script>
+    <script src="js/plagins/modal.js"></script>
+    <script src="js/plagins/modalResult.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/testmain.js"></script>
+  </body>
+</html>

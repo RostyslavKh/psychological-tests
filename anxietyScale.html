@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шкала тревоги (BAI) BECK</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/modalResult.css">
+    <link rel="stylesheet" href="css/modalConfirm.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />   
+</head>
+<body>
+    <main class="main-style">
+        <header>
+            <div style="display: flex; flex-direction: row; height: 100px; background-color: white; padding: 10px; border-style: outset;"> 
+                <img class="foto" src="images/favicon-150x150.png" alt = "Логотип Структура" width="100px" height="100px">
+                <!--Надпись Структура Центр психотерапии-->
+                <div style="text-align: center; width: 180px; height: 100px;"> 
+                    <div class="logo_first_row"> cтруктура </div>
+                    <div class="logo_second_row"> центр психотерапии</div>
+                </div>
+                <!--Кнопки переключения языков-->
+                <div style="display: flex; flex-direction: row;">
+                    <div class="language_button_Ru"> Ru </div>
+                    <div class="language_button_Ua"> Ua </div>
+                </div>
+                <!--Приемные дни и телефон-->
+                <div style="width: 300px;">
+                    <div class="work_day_and_time"> Пн - Сб 9:00 - 21:00</div>
+                    <div> <span class="phone_first_numbers">+38 (093)</span> <span class="phone_last_numbers">899 77 36</span></div>
+                </div>
+                <button class="appointment" onclick="modal.open()"> Запись на прием</button>
+        </header>        
+        <article class="article-style">
+            <p class="questions-header"> Перед Вами список симптомов тревоги. Внимательно прочтите каждый из симптомов.
+                 Выберите и обозначьте в какой степени, каждый из симптомов, беспокоил Вас в последнюю неделю, включая сегодня.</p>
+            <ol id="questionsList">
+                <li> Притупление чувств, покалывание или жжение:<br>
+                    <input class="form-check-input" type="radio" name="answer1" value= 0 checked> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer1" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer1" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer1" value= 3> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Ощущение жары:<br>
+                    <input class="form-check-input" type="radio" name="answer2" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer2" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer2" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer2" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Дрожь в ногах, непроизвольные движения ногами:<br>
+                    <input class="form-check-input" type="radio" name="answer3" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer3" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer3" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer3" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Невозможность успокоиться:<br>
+                    <input class="form-check-input" type="radio" name="answer4" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer4" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer4" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer4" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Страх, что случится самое страшное:<br>
+                    <input class="form-check-input" type="radio" name="answer5" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer5" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer5" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer5" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Головокружение или затуманенное сознание:<br>
+                    <input class="form-check-input" type="radio" name="answer6" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer6" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer6" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer6" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>               
+                <li> Неуравновешенность:<br>
+                    <input class="form-check-input" type="radio" name="answer7" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer7" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer7" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer7" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Ощущение паники:<br>
+                    <input class="form-check-input" type="radio" name="answer8" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer8" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer8" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer8" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Нервозность:<br>
+                    <input class="form-check-input" type="radio" name="answer9" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer9" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer9" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer9" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Ощущение удушья:<br>
+                    <input class="form-check-input" type="radio" name="answer10" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer10" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer10" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer10" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Дрожь в руках:<br>
+                    <input class="form-check-input" type="radio" name="answer11" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer11" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer11" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer11" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Слабость и/или "ватные ноги":<br>
+                    <input class="form-check-input" type="radio" name="answer12" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer12" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer12" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer12" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Страх потерять самообладание:<br>
+                    <input class="form-check-input" type="radio" name="answer13" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer13" value= 1 checked> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer13" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer13" value= 3> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Затрудненное дыхание:<br>
+                    <input class="form-check-input" type="radio" name="answer14" value= 0 checked> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer14" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer14" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer14" value= 3> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Страх смерти:<br>
+                    <input class="form-check-input" type="radio" name="answer15" value= 0 checked> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer15" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer15" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer15" value= 3> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Испуг:<br>
+                    <input class="form-check-input" type="radio" name="answer16" value= 0 checked> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer16" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer16" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer16" value= 3> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Расстройство пищеварения (ощущение дискомфорта в животе):<br>
+                    <input class="form-check-input" type="radio" name="answer17" value= 0 checked> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer17" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer17" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer17" value= 3> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Ощущение обморока :<br>
+                    <input class="form-check-input" type="radio" name="answer18" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer18" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer18" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer18" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Покраснение лица (жар):<br>
+                    <input class="form-check-input" type="radio" name="answer19" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer19" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer19" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer19" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Холодный пот:<br>
+                    <input class="form-check-input" type="radio" name="answer20" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer20" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer20" value= 2> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer20" value= 3 checked> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+                <li> Учащенное сердцебиение:<br>
+                    <input class="form-check-input" type="radio" name="answer21" value= 0> Совсем не беспокоит<br>
+                    <input class="form-check-input" type="radio" name="answer21" value= 1> Беспокоит в лёгкой степени (не особенно беспокоит)<br>
+                    <input class="form-check-input" type="radio" name="answer21" value= 2 checked> Беспокоит в средней степени (это было очень неприятно, но я справился/лась с этим)<br>
+                    <input class="form-check-input" type="radio" name="answer21" value= 3> Беспокоит в значительной степени (с трудом справился/лась с этим)<br><br>
+                </li>
+            </ol> 
+            <button class="btn btn-primary" onclick="anxietyScaleSum()"> Подсчет результатов теста</button>
+        </article> 
+        
+        <div class="modal-result">
+            <div class="modal-result-overly" data-close="true">
+              <div class="modal-result-window">
+                <div class="modal-result-header">
+                  <span style="margin: auto" class="modal-result-title">Результаты тестирования</span>
+                  <span class="modal-result-close" data-close="true">&times;</span>
+                </div>
+                <div class="modal-result-body" style="border: 1px solid gray; padding: 20px 20px" data-content>
+                  <p id="inner-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, enim?</p>                  
+                </div>
+                <div class="modal-footer1" style="text-align: center">
+                  <button
+                    style="
+                      display: inline-block;                            
+                      height: 40px;
+                      position: relative;
+                      padding: 0 1rem;
+                    "
+                    class="btn btn-outline-primary"
+                    onclick="modal.open()"
+                    data-close="true"
+                  >
+                    Записаться на прием
+                  </button>
+                </div>
+              </div>
+            </div>
+        </div>  
+        
+        <div class="modal-confirm">
+            <div class="modal-confirm-overly" data-close="true">
+              <div class="modal-confirm-window">
+                <div class="modal-confirm-header">
+                  <span style="margin: auto" class="modal-confirm-title">Записаться на прием</span>
+                  <span class="modal-confirm-close" data-close="true">&times;</span>
+                </div>
+                <div class="modal-confirm-body" style="border: 1px solid gray; padding: 20px 20px">
+                  <h5>Проверьте правильность информации:</h5>
+                  <br>
+                  <h4 id='inner-confirm-name'> Имя</h4>
+                  <h4 id='inner-confirm-phone'> Телефон</h4>                  
+                  <br>  
+                </div>                
+                <form action="https://formsubmit.co/rostislavovich76@gmail.com" method="POST" id="inner-messege">
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_subject" value="Запись на прием центр Структура" />
+                  <input type="hidden" name="phoneNumber" id="client-confirm-phone" />
+                  <input type="hidden" name="_next" value="https://structura-tests.netlify.app/" />
+                  <input type="hidden" name="userName" id="client-confirm-name" />
+                  <input type="hidden" name="_template" value="table" />                                
+                  <div class="modal-confirm-footer">                     
+                    <button                      
+                      class="btn btn-outline-success"
+                      type="submit"
+                      onclick="modalConfirm.close()"                      
+                    >
+                      Подтвердить
+                    </button>                                       
+                  </div>
+                </form>                
+              </div>
+            </div>
+        </div> 
+    </main>
+
+    <script src="js/lib/jquery-1.8.3.min.js"></script>
+    <script src="js/lib/jquery.maskedinput.min.js"></script>    
+    <script src="js/base.js"></script>    
+    <script src="js/plagins/modalResult.js"></script>
+    <script src="js/plagins/modalConfirm.js"></script>
+    <script src="js/plagins/modal.js"></script>    
+    <script src="js/testmain.js"> </script>
+</body>
+</html>

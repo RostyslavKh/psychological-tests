@@ -1,0 +1,9 @@
+input:valid:after {
+  border: 10px solid;
+  color: green;
+}
+
+input:invalid::after {
+  border: 5px;
+  color: red;
+}

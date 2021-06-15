@@ -1,0 +1,59 @@
+.modal-confirm {
+  /* display: block; */
+}
+
+.modal-confirm.open .modal-confirm-overly,
+.modal-confirm.open .modal-confirm-window {
+  opacity: 1;
+  z-index: 200;
+}
+
+.modal-confirm-overly,
+.modal-confirm-window {
+  opacity: 0;
+  z-index: -1;
+}
+
+.modal-confirm-overly {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-confirm-window {
+  width: 500px;
+  margin: 100px auto 0px auto;
+  background: white;
+}
+
+.modal-confirm-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-confirm-close {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(4, 0, 255);
+  cursor: pointer;
+}
+
+.modal-confirm-title {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: right;
+  color: #42495b;
+}
+
+.modal-confirm-footer {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
